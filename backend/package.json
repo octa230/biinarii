@@ -1,18 +1,18 @@
 {
-  "name": "flipkart",
+  "name": "biinarii",
   "version": "1.0.0",
   "engines": {
     "node": "v16.14.0",
     "npm": "8.1.3"
   },
-  "description": "Full Stack Flipkart Ecommerce",
-  "main": "backend/server.js",
+  "description": "Full Stack biinarii Ecommerce",
+  "main": "/backend/server.js",
   "scripts": {
-    "dev": "nodemon backend/server.js",
-    "start": "node backend/server.js",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
-  "author": "Jigar Sable",
+  "author": "mervyn stunner",
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^7.6.0",
@@ -20,7 +20,7 @@
     "body-parser": "^1.19.1",
     "cloudinary": "^1.28.1",
     "cookie-parser": "^1.4.6",
-    "dotenv": "^14.2.0",
+    "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "express-fileupload": "^1.2.1",
     "jsonwebtoken": "^8.5.1",
@@ -30,5 +30,14 @@
     "stripe": "^8.200.0",
     "uuid": "^8.3.2",
     "validator": "^13.7.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octa230/binarii.git"
+  },
+  "bugs": {
+    "url": "https://github.com/octa230/binarii/issues"
+  },
+  "homepage": "https://github.com/octa230/binarii#readme"
 }

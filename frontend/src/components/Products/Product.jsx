@@ -6,8 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToWishlist, removeFromWishlist } from '../../actions/wishlistAction';
 import { useSnackbar } from 'notistack';
 
-const Product = ({ _id, name, images, ratings, numOfReviews, price, cuttedPrice }) => {
+const Product = (props) => {
 
+    const { _id, name, images, ratings, numOfReviews, price, cuttedPrice } = props
     const dispatch = useDispatch();
     const { enqueueSnackbar } = useSnackbar();
 
@@ -47,8 +48,8 @@ const Product = ({ _id, name, images, ratings, numOfReviews, price, cuttedPrice 
 
                 {/* <!-- price container --> */}
                 <div className="flex items-center gap-1.5 text-md font-medium">
-                    <span>₹{price.toLocaleString()}</span>
-                    <span className="text-gray-500 line-through text-xs">₹{cuttedPrice.toLocaleString()}</span>
+                    <span>UGX: {price.toLocaleString()}</span>
+                    <span className="text-gray-500 line-through text-xs">UGX: {cuttedPrice.toLocaleString()}</span>
                     <span className="text-xs text-primary-green">{getDiscount(price, cuttedPrice)}%&nbsp;off</span>
                 </div>
                 {/* <!-- price container --> */}

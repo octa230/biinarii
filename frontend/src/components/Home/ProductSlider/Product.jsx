@@ -28,11 +28,11 @@ const Product = (props) => {
     }
 
     return (
-        <div className="flex flex-col items-center gap-2 px-2 py-6 relative">
+        <div key={_id} className="flex flex-col items-center gap-2 px-2 py-6 relative">
             {/* <!-- image & product title --> */}
             <Link to={`/product/${_id}`} className="flex flex-col items-center text-center group">
                 <div className="w-36 h-36">
-                    <img draggable="false" className="w-full h-full object-contain" src={images[0].url} alt={name} />
+                    <img draggable="false" className="w-full h-full object-contain" src={Product.props.images[0].url} alt={name} />
                 </div>
                 <h2 className="text-sm mt-4 group-hover:text-primary-blue">{name.length > 50 ? `${name.substring(0, 50)}...` : name}</h2>
             </Link>
@@ -49,8 +49,8 @@ const Product = (props) => {
 
                 {/* <!-- price container --> */}
                 <div className="flex items-center gap-1.5 text-md font-medium">
-                    <span>₹{price.toLocaleString()}</span>
-                    <span className="text-gray-500 line-through text-xs">₹{cuttedPrice.toLocaleString()}</span>
+                    <span>UGX: {price.toLocaleString()}</span>
+                    <span className="text-gray-500 line-through text-xs">UGX: {props.cuttedPrice.toLocaleString()}</span>
                     <span className="text-xs text-primary-green">{getDiscount(price, cuttedPrice)}%&nbsp;off</span>
                 </div>
                 {/* <!-- price container --> */}

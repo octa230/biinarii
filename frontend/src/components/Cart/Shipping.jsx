@@ -114,11 +114,11 @@ const Shipping = () => {
                                                 label="Country"
                                                 // onChange={(e) => setCountry(e.target.value)}
                                             >
-                                                <MenuItem value={'IN'}>India</MenuItem>
+                                                <MenuItem value={'IN'}>Uganda</MenuItem>
                                             </Select>
                                         </FormControl>
 
-                                        <FormControl fullWidth disabled={country ? false : true}>
+                                       {/*  <FormControl fullWidth disabled={country ? false : true}>
                                             <InputLabel id="state-select">State</InputLabel>
                                             <Select
                                                 labelId="state-select"
@@ -132,7 +132,7 @@ const Shipping = () => {
                                                     <MenuItem key={item.code} value={item.code}>{item.name}</MenuItem>
                                                 ))}
                                             </Select>
-                                        </FormControl>
+                                        </FormControl> */}
 
                                     </div>
 

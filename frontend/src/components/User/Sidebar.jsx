@@ -30,13 +30,13 @@ const Sidebar = ({ activeTab }) => {
             {/* <!-- profile card --> */}
             <div className="flex items-center gap-4 p-3 bg-white rounded-sm shadow">
                 {/* <!-- user icon --> */}
-                <div className="w-12 h-12 rounded-full">
+                {/* <div className="w-12 h-12 rounded-full">
                     <img draggable="false" className="h-full w-full object-cover rounded-full" src={user.avatar.url} alt="Avatar" />
-                </div>
+                </div> */}
                 {/* <!-- user icon --> */}
                 <div className="flex flex-col gap-1">
                     <p className="text-xs">Hello,</p>
-                    <h2 className="font-medium">{user.name}</h2>
+                    <h2 className="font-medium">{user.name.slice(0, 3)}</h2>
                 </div>
             </div>
             {/* <!-- profile card --> */}

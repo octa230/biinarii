@@ -23,12 +23,11 @@ const Register = () => {
     const [user, setUser] = useState({
         name: "",
         email: "",
-        gender: "",
         password: "",
         cpassword: "",
     });
 
-    const { name, email, gender, password, cpassword } = user;
+    const { name, email, password, cpassword } = user;
 
     const [avatar, setAvatar] = useState();
     const [avatarPreview, setAvatarPreview] = useState("preview.png");
@@ -43,38 +42,19 @@ const Register = () => {
             enqueueSnackbar("Password Doesn't Match", { variant: "error" });
             return;
         }
-        if (!avatar) {
-            enqueueSnackbar("Select Avatar", { variant: "error" });
-            return;
-        }
 
         const formData = new FormData();
         formData.set("name", name);
         formData.set("email", email);
-        formData.set("gender", gender);
         formData.set("password", password);
-        formData.set("avatar", avatar);
-
         dispatch(registerUser(formData));
     }
 
     const handleDataChange = (e) => {
-        if (e.target.name === "avatar") {
-            const reader = new FileReader();
 
-            reader.onload = () => {
-                if (reader.readyState === 2) {
-                    setAvatarPreview(reader.result);
-                    setAvatar(reader.result);
-                }
-            };
-
-            reader.readAsDataURL(e.target.files[0]);
-
-        } else {
             setUser({ ...user, [e.target.name]: e.target.value });
         }
-    }
+    
 
     useEffect(() => {
         if (error) {
@@ -137,7 +117,7 @@ const Register = () => {
                                 {/* <!-- input container column --> */}
 
                                 {/* <!-- gender input --> */}
-                                <div className="flex gap-4 items-center">
+                             {/*    <div className="flex gap-4 items-center">
                                     <h2 className="text-md">Your Gender :</h2>
                                     <div className="flex items-center gap-6" id="radioInput">
                                         <RadioGroup
@@ -149,7 +129,7 @@ const Register = () => {
                                             <FormControlLabel name="gender" value="female" onChange={handleDataChange} control={<Radio required />} label="Female" />
                                         </RadioGroup>
                                     </div>
-                                </div>
+                                </div> */}
                                 {/* <!-- gender input --> */}
 
                                 {/* <!-- input container column --> */}
@@ -175,23 +155,7 @@ const Register = () => {
                                 </div>
                                 {/* <!-- input container column --> */}
 
-                                <div className="flex flex-col w-full justify-between sm:flex-row gap-3 items-center">
-                                    <Avatar
-                                        alt="Avatar Preview"
-                                        src={avatarPreview}
-                                        sx={{ width: 56, height: 56 }}
-                                    />
-                                    <label className="rounded font-medium bg-gray-400 text-center cursor-pointer text-white w-full py-2 px-2.5 shadow hover:shadow-lg">
-                                        <input
-                                            type="file"
-                                            name="avatar"
-                                            accept="image/*"
-                                            onChange={handleDataChange}
-                                            className="hidden"
-                                        />
-                                        Choose File
-                                    </label>
-                                </div>
+                               
                                 <button type="submit" className="text-white py-3 w-full bg-primary-orange shadow hover:shadow-lg rounded-sm font-medium">Signup</button>
                                 <Link to="/login" className="hover:bg-gray-50 text-primary-blue text-center py-3 w-full shadow border rounded-sm font-medium">Existing User? Log in</Link>
                             </div>

@@ -14,24 +14,14 @@ const userSchema = new mongoose.Schema({
         required: [true, "Please Enter Your Email"],
         unique: true,
     },
-    gender: {
-        type: String,
-        required: [true, "Please Enter Gender"]
-    },
+   
     password: {
         type: String,
         required: [true, "Please Enter Your Password"],
         minLength: [8, "Password should have atleast 8 chars"],
         select: false,
     },
-    avatar: {
-        public_id: {
-            type: String,
-        },
-        url: {
-            type: String,
-        }
-    },
+    
     role: {
         type: String,
         default: "user",
