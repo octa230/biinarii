@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToWishlist, removeFromWishlist } from '../../actions/wishlistAction';
 import { useSnackbar } from 'notistack';
 
-const Product = (props) => {
+const Product = ({ _id, name, images, ratings, numOfReviews, price, cuttedPrice }) => {
 
-    const { _id, name, images, ratings, numOfReviews, price, cuttedPrice } = props
+    
     const dispatch = useDispatch();
     const { enqueueSnackbar } = useSnackbar();
 
@@ -31,7 +31,7 @@ const Product = (props) => {
             {/* <!-- image & product title --> */}
             <Link to={`/product/${_id}`} className="flex flex-col items-center text-center group">
                 <div className="w-44 h-48">
-                    <img draggable="false" className="w-full h-full object-contain" src={images[0].url} alt="" />
+                    <img draggable="false" className="w-full h-full object-contain" src={images && images[0].url} alt="" />
                 </div>
                 <h2 className="text-sm mt-4 group-hover:text-primary-blue text-left">{name.length > 85 ? `${name.substring(0, 85)}...` : name}</h2>
             </Link>
