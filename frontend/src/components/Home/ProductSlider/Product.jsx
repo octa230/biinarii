@@ -31,7 +31,7 @@ const Product = ({ _id, name, images, ratings, numOfReviews, price, cuttedPrice 
             {/* <!-- image & product title --> */}
             <Link to={`/product/${_id}`} className="flex flex-col items-center text-center group">
                 <div className="w-36 h-36">
-                    <img draggable="false" className="w-full h-full object-contain" src={images && images[0].url} alt={name} />
+                    <img draggable="false" className="w-full h-full object-contain" src={images && images[0]} alt={name} />
                 </div>
                 <h2 className="text-sm mt-4 group-hover:text-primary-blue">{name.length > 50 ? `${name.substring(0, 50)}...` : name}</h2>
             </Link>
@@ -49,7 +49,7 @@ const Product = ({ _id, name, images, ratings, numOfReviews, price, cuttedPrice 
                 {/* <!-- price container --> */}
                 <div className="flex items-center gap-1.5 text-md font-medium">
                     <span>UGX: {price.toLocaleString()}</span>
-                    <span className="text-gray-500 line-through text-xs">UGX: {props.cuttedPrice.toLocaleString()}</span>
+                    <span className="text-gray-500 line-through text-xs">UGX: {cuttedPrice.toLocaleString()}</span>
                     <span className="text-xs text-primary-green">{getDiscount(price, cuttedPrice)}%&nbsp;off</span>
                 </div>
                 {/* <!-- price container --> */}
