@@ -18,7 +18,7 @@ const Product = (props) => {
 
     const addToWishlistHandler = () => {
         if (itemInWishlist) {
-            dispatch(removeFromWishlist(_id));
+            dispatch(removeFromWishlist(product._id));
             enqueueSnackbar("Remove From Wishlist", { variant: "success" });
         } else {
             dispatch(addToWishlist(product._id));
