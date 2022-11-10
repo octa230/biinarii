@@ -31,7 +31,7 @@ const Product = (props) => {
             {/* <!-- image & product title --> */}
             <Link to={`/product/${_id}`} className="flex flex-col items-center text-center group">
                 <div className="w-44 h-48">
-                    <img draggable="false" className="w-full h-full object-contain" src={images && images[0].url} alt="" />
+                    <img draggable="false" className="w-full h-full object-contain" src={images[0].url} alt="" />
                 </div>
                 <h2 className="text-sm mt-4 group-hover:text-primary-blue text-left">{name.length > 85 ? `${name.substring(0, 85)}...` : name}</h2>
             </Link>
