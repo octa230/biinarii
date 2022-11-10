@@ -6,9 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToWishlist, removeFromWishlist } from '../../../actions/wishlistAction';
 import { useSnackbar } from 'notistack';
 
-const Product = (props) => {
+const Product = ({ _id, name, images, ratings, numOfReviews, price, cuttedPrice }) => {
 
-    const { _id, name, images, ratings, numOfReviews, price, cuttedPrice } = props;
 
     const dispatch = useDispatch();
     const { enqueueSnackbar } = useSnackbar();
