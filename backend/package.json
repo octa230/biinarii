@@ -6,11 +6,10 @@
     "npm": "8.1.3"
   },
   "description": "Full Stack biinarii Ecommerce",
-  "main": "/backend/server.js",
+  "main": " server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
+    "start": "node server.js"
   },
   "author": "mervyn stunner",
   "license": "ISC",

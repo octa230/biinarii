@@ -42,11 +42,11 @@ const Payment = () => {
         phoneNo: shippingInfo.phoneNo,
     };
 
-    // const order = {
-    //     shippingInfo,
-    //     orderItems: cartItems,
-    //     totalPrice,
-    // }
+     const order = {
+         shippingInfo,
+         orderItems: cartItems,
+         totalPrice,
+     }
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -143,11 +143,12 @@ const Payment = () => {
                         <Stepper activeStep={3}>
                             <div className="w-full bg-white">
 
-                                <form onSubmit={(e) => submitHandler(e)} autoComplete="off" className="flex flex-col justify-start gap-2 w-full mx-8 my-4 overflow-hidden">
+                                <form onSubmit={(e) => submitHandler(e)} autoComplete="off" 
+                                className="flex flex-col justify-start gap-2 w-full mx-8 my-4 overflow-hidden">
                                     <FormControl>
                                         <RadioGroup
                                             aria-labelledby="payment-radio-group"
-                                            defaultValue="paytm"
+                                            defaultValue="Cash on Delivery"
                                             name="payment-radio-button"
                                         >
                                             <FormControlLabel
@@ -155,7 +156,6 @@ const Payment = () => {
                                                 control={<Radio />}
                                                 label={
                                                     <div className="flex items-center gap-4">
-                                                        <img draggable="false" className="h-6 w-6 object-contain" alt="Paytm Logo" />
                                                         <span>Payment</span>
                                                     </div>
                                                 }
@@ -163,7 +163,11 @@ const Payment = () => {
                                         </RadioGroup>
                                     </FormControl>
 
-                                    <input type="submit" value={`Pay UGX: ${totalPrice.toLocaleString()}`} disabled={payDisable ? true : false} className={`${payDisable ? "bg-primary-grey cursor-not-allowed" : "bg-primary-orange cursor-pointer"} w-1/2 sm:w-1/4 my-2 py-3 font-medium text-white shadow hover:shadow-lg rounded-sm uppercase outline-none`} />
+                                    <input type="submit" value={`Pay UGX: ${totalPrice.toLocaleString()}`} 
+                                    disabled={payDisable ? true : false} 
+                                    className={`${payDisable ? "bg-primary-grey cursor-not-allowed" 
+                                    : "bg-primary-orange cursor-pointer"} 
+                                    w-1/2 sm:w-1/4 my-2 py-3 font-medium text-white shadow hover:shadow-lg rounded-sm uppercase outline-none`} />
 
                                 </form>
 
