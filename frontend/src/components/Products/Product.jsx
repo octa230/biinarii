@@ -41,7 +41,8 @@ const Product = (props) => {
             <div className="flex flex-col gap-2 items-start">
                 {/* <!-- rating badge --> */}
                 <span className="text-sm text-gray-500 font-medium flex gap-2 items-center">
-                    <span className="text-xs px-1.5 py-0.5 bg-primary-green rounded-sm text-white flex items-center gap-0.5">{product.ratings.toFixed(1)} <StarIcon sx={{ fontSize: "14px" }} /></span>
+                    <span className="text-xs px-1.5 py-0.5 bg-primary-green rounded-sm text-white flex items-center gap-0.5">
+                        {product.ratings.toFixed(1)} <StarIcon sx={{ fontSize: "14px" }} /></span>
                     <span>({product.numOfReviews})</span>
                 </span>
                 {/* <!-- rating badge --> */}
