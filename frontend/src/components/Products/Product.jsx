@@ -14,14 +14,14 @@ const Product = (props) => {
 
     const { wishlistItems } = useSelector((state) => state.wishlist);
 
-    const itemInWishlist = wishlistItems.some((i) => i.product === _id);
+    const itemInWishlist = wishlistItems.some((i) => i.product === product._id);
 
     const addToWishlistHandler = () => {
         if (itemInWishlist) {
             dispatch(removeFromWishlist(_id));
             enqueueSnackbar("Remove From Wishlist", { variant: "success" });
         } else {
-            dispatch(addToWishlist(_id));
+            dispatch(addToWishlist(product._id));
             enqueueSnackbar("Added To Wishlist", { variant: "success" });
         }
     }
